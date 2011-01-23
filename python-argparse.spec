@@ -13,7 +13,10 @@ URL:		http://code.google.com/p/argparse/
 Source0:	http://argparse.googlecode.com/files/%{module}-%{version}.zip
 # Source0-md5:	e62565cde81a8deb61f90dcb5e8861a4
 BuildRequires:	python-distribute
+BuildRequires:	python-modules
+BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.553
+BuildRequires:	unzip
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
