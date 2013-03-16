@@ -6,7 +6,7 @@
 Summary:	Optparse inspired command line parser for Python
 Name:		python-argparse
 Version:	1.1
-Release:	1
+Release:	2
 License:	ASL 2.0
 Group:		Development/Languages
 URL:		http://code.google.com/p/argparse/
