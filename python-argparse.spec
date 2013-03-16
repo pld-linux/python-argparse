@@ -1,3 +1,5 @@
+# NOTE
+# - The argparse module is now part of the Python standard library since 2.7, 3.2
 #
 # Conditional build:
 %bcond_without	tests	# do not perform "make test"
@@ -5,18 +7,17 @@
 %define		module	argparse
 Summary:	Optparse inspired command line parser for Python
 Name:		python-argparse
-Version:	1.1
-Release:	2
+Version:	1.2.1
+Release:	1
 License:	ASL 2.0
 Group:		Development/Languages
 URL:		http://code.google.com/p/argparse/
-Source0:	http://argparse.googlecode.com/files/%{module}-%{version}.zip
-# Source0-md5:	e62565cde81a8deb61f90dcb5e8861a4
+Source0:	https://argparse.googlecode.com/files/%{module}-%{version}.tar.gz
+# Source0-md5:	2fbef8cb61e506c706957ab6e135840c
 BuildRequires:	python-distribute
 BuildRequires:	python-modules
 BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.553
-BuildRequires:	unzip
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -36,8 +37,8 @@ optparse API.
 
 %prep
 %setup -q -n %{module}-%{version}
-%undos README.txt doc/_static/pygments.css
-%{__rm} -rf doc/source
+%undos README.txt
+%{__rm} -r doc/source
 
 %build
 %{__python} setup.py build
